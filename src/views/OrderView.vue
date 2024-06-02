@@ -1,14 +1,14 @@
 <script setup>
 import { computed, onMounted, ref } from "vue";
 import axios from 'axios';
-import Paginate from 'vuejs-paginate-next'; 
+import Paginate from 'vuejs-paginate-next';
 
 const items = ref([])
 const currentPage = ref(1)
 
 async function fetchData() {
   try {
-    const response = await axios.get('http://localhost:3000/booking-list')
+    const response = await axios.get('https://fancy-beijinho-1834ec.netlify.app/api/v1/booking-list')
     console.log(response)
     items.value = response.data
     // people.value = response.data
@@ -41,14 +41,14 @@ const clickCallback = (pageNum) => {
     <div class="card" v-for="item in items" :key="item.id">
       <div class="card-body d-flex flex-row align-items-center justify-content-between">
         <div class="d-flex gap-3">
-            <span class="fs-5 fw-bold">FullName</span>
-            <span class="fs-6">FlightDeparture</span>
-            <span class="fs-6">FlightArrival</span>
-            <span class="fs-6">FlightTime</span>
-            <span class="fs-5 fw-bold">Seat</span>
+          <span class="fs-5 fw-bold">FullName</span>
+          <span class="fs-6">FlightDeparture</span>
+          <span class="fs-6">FlightArrival</span>
+          <span class="fs-6">FlightTime</span>
+          <span class="fs-5 fw-bold">Seat</span>
         </div>
         <div class="d-flex gap-3">
-            <span class="fs-4 fw-bold">$80</span>
+          <span class="fs-4 fw-bold">$80</span>
         </div>
       </div>
     </div>

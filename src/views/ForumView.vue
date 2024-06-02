@@ -46,7 +46,7 @@ const questions = ref([])
 // Fetch questions
 const fetchQuestions = async () => {
   try {
-    const response = await axios.get("http://localhost:3000/forum")
+    const response = await axios.get("https://fancy-beijinho-1834ec.netlify.app/api/v1/forum")
     questions.value = response.data.map(item => ({
       ...item,
       replying: false,
@@ -70,7 +70,7 @@ const createQuestion = async () => {
     }
     const formData = new FormData()
     formData.append("question", question.value)
-    await axios.post("http://localhost:3000/forum", formData)
+    await axios.post("https://fancy-beijinho-1834ec.netlify.app/api/v1/forum", formData)
     question.value = "" // Clear input after successful submission
     fetchQuestions() // Refresh question list
   } catch (error) {
@@ -94,7 +94,7 @@ const replyToQuestion = async (item) => {
     formData.append("id", item.id)
     formData.append("answer", item.replyText)
     // Assuming you have an API endpoint to handle replies
-    await axios.put("http://localhost:3000/forum/reply", formData)
+    await axios.put("https://fancy-beijinho-1834ec.netlify.app/api/v1/forum/reply", formData)
     item.replying = false; // Hide reply input after successful reply
     fetchQuestions() // Refresh question list
   } catch (error) {
@@ -105,7 +105,7 @@ const replyToQuestion = async (item) => {
 // Like question
 const likeQuestion = async (item) => {
   try {
-    await axios.put("http://localhost:3000/forum/like", { id: item.id })
+    await axios.put("https://fancy-beijinho-1834ec.netlify.app/api/v1/forum/like", { id: item.id })
     item.liked = true
     item.likes++
     fetchQuestions()
@@ -117,7 +117,7 @@ const likeQuestion = async (item) => {
 // Dislike question
 const dislikeQuestion = async (item) => {
   try {
-    await axios.put("http://localhost:3000/forum/dislike", { id: item.id })
+    await axios.put("https://fancy-beijinho-1834ec.netlify.app/api/v1/forum/dislike", { id: item.id })
     const questionIndex = questions.value.findIndex(q => q.id === item)
     item.disliked = true
     item.dislikes++

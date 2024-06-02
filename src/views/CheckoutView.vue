@@ -27,7 +27,7 @@ const purchaseFlight = async () => {
       phone: form.value.phone,
       email: form.value.email
     }
-    const response = await axios.post('http://localhost:3000/booking', formData, {
+    const response = await axios.post('https://fancy-beijinho-1834ec.netlify.app/api/v1/booking', formData, {
       headers: {
         "Content-Type": "application/json"
       }
@@ -42,7 +42,7 @@ const purchaseFlight = async () => {
 const fetchSeat = async () => {
   const id = route.params.id
   try {
-    const response = await axios.get(`http://localhost:3000/seat/${id}`)
+    const response = await axios.get(`https://fancy-beijinho-1834ec.netlify.app/api/v1/seat/${id}`)
     console.log(response)
     seats.value = response.data
   } catch (error) {
@@ -53,7 +53,7 @@ const fetchSeat = async () => {
 const selectSeat = (seatNumber) => {
   selectedSeat.value = seatNumber
 }
- 
+
 fetchSeat()
 
 
@@ -64,7 +64,8 @@ fetchSeat()
     <div class="card w-100">
       <div class="card-body d-flex flex-row align-items-center justify-content-between">
         <div class="grid w-100">
-          <button v-for="seat in seats" class="col seat btn btn-secondary" :key="seat.id" :disabled="seat.booked" @click="selectSeat(seat.id)" :class="{'btn-success' :seat.id === selectedSeat}">{{seat.seatnumber}}</button>
+          <button v-for="seat in seats" class="col seat btn btn-secondary" :key="seat.id" :disabled="seat.booked"
+            @click="selectSeat(seat.id)" :class="{ 'btn-success': seat.id === selectedSeat }">{{ seat.seatnumber }}</button>
         </div>
       </div>
     </div>

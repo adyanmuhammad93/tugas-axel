@@ -13,7 +13,7 @@ const selectedDate = ref(null)
 
 async function fetchData() {
   try {
-    const response = await axios.get('http://localhost:3000/airport')
+    const response = await axios.get('https://fancy-beijinho-1834ec.netlify.app/api/v1/airport')
     console.log(response)
     items.value = response.data.map(item => ({
       ...item,
@@ -43,7 +43,7 @@ const searchFlight = async () => {
       arrival: form.value.arrival.iata,
       date: form.value.date
     }
-    const response = await axios.post('http://localhost:3000/flight-search', formData)
+    const response = await axios.post('https://fancy-beijinho-1834ec.netlify.app/api/v1/flight-search', formData)
     console.log(response)
     const newData = JSON.stringify(response.data)
     router.push({

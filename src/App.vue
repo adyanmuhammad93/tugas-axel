@@ -30,7 +30,7 @@ const login = async (form) => {
     const formData = new FormData()
     formData.append("username", form.username)
     formData.append("password", form.password)
-    const response = await axios.post("http://localhost:3000/login", formData, {
+    const response = await axios.post("https://fancy-beijinho-1834ec.netlify.app/api/v1/login", formData, {
       headers: {
         "Content-Type": "application/json"
       }

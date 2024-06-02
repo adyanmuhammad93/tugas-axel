@@ -2,7 +2,7 @@
 import { computed, onMounted, ref } from "vue";
 import axios from 'axios';
 import { useRouter } from "vue-router";
-import Paginate from 'vuejs-paginate-next'; 
+import Paginate from 'vuejs-paginate-next';
 
 
 const router = useRouter()
@@ -12,7 +12,7 @@ const currentPage = ref(1)
 
 async function fetchData() {
   try {
-    const response = await axios.get('http://localhost:3000/airport')
+    const response = await axios.get('https://fancy-beijinho-1834ec.netlify.app/api/v1/airport')
     console.log(response)
     items.value = response.data
     // people.value = response.data
@@ -28,7 +28,7 @@ onMounted(() => {
 
 async function fetchFlight() {
   try {
-    const response = await axios.get('http://localhost:3000/flight')
+    const response = await axios.get('https://fancy-beijinho-1834ec.netlify.app/api/v1/flight')
     console.log(response.data)
     flight.value = response.data
   } catch (error) {
@@ -43,7 +43,7 @@ const clickEdit = (id) => {
 const deleteFlight = async (id) => {
   if (window.confirm('Are you sure you want to Delete?')) {
     try {
-      const response = await axios.delete(`http://localhost:3000/flight/${id}`)
+      const response = await axios.delete(`https://fancy-beijinho-1834ec.netlify.app/api/v1/flight/${id}`)
       console.log(response)
       fetchFlight()
     } catch (error) {
@@ -104,17 +104,9 @@ const clickCallback = (pageNum) => {
         </tbody>
       </table>
     </div>
-      <paginate
-    :page-count="20"
-    :page-range="3"
-    :margin-pages="2"
-    :click-handler="clickCallback"
-    :prev-text="'Prev'"
-    :next-text="'Next'"
-    :container-class="'pagination'"
-    :page-class="'page-item'"
-  >
-  </paginate>
+    <paginate :page-count="20" :page-range="3" :margin-pages="2" :click-handler="clickCallback" :prev-text="'Prev'"
+      :next-text="'Next'" :container-class="'pagination'" :page-class="'page-item'">
+    </paginate>
   </main>
 </template>
 

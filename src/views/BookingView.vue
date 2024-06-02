@@ -5,7 +5,7 @@ import axios from "axios";
 const orders = ref([])
 const getOrders = async () => {
     try {
-        const response = await axios.get('http://localhost:3000/booking', {timeout: 100000})
+        const response = await axios.get('https://fancy-beijinho-1834ec.netlify.app/api/v1/booking', { timeout: 100000 })
         console.log(response.data)
         orders.value = response.data
     } catch (error) {
