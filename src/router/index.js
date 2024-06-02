@@ -116,14 +116,14 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import("../views/EditFlightView.vue"),
     },
-    {
-      path: "/forbidden",
-      name: "forbidden",
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: Forbidden,
-    },
+    // {
+    //   path: "/forbidden",
+    //   name: "forbidden",
+    //   // route level code-splitting
+    //   // this generates a separate chunk (About.[hash].js) for this route
+    //   // which is lazy-loaded when the route is visited.
+    //   component: Forbidden,
+    // },
   ],
 });
 
@@ -137,7 +137,7 @@ router.beforeEach((to, from, next) => {
       } else if (role === "user" && !to.meta.requiresAdmin) {
         next();
       } else {
-        next("/forbidden");
+        next("/");
       }
     } else {
       next();
