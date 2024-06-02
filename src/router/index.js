@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import NonAuthorizeView from "../views/NonAuthorizeView.vue";
+import Forbidden from "../views/Forbidden.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -117,12 +117,12 @@ const router = createRouter({
       component: () => import("../views/EditFlightView.vue"),
     },
     {
-      path: "/nonauth",
-      name: "noauth",
+      path: "/forbidden",
+      name: "forbidden",
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: NonAuthorizeView,
+      component: Forbidden,
     },
   ],
 });
@@ -137,7 +137,7 @@ router.beforeEach((to, from, next) => {
       } else if (role === "user" && !to.meta.requiresAdmin) {
         next();
       } else {
-        next("/nonauth");
+        next("/forbidden");
       }
     } else {
       next();
