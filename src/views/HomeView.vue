@@ -64,7 +64,7 @@ const searchFlight = async () => {
       <div class="p-5 mb-4 bg-body-tertiary rounded-3 bgJumbotron">
         <div class="container-fluid py-5">
           <h1 class="display-5 fw-bold">Swinny Tours</h1>
-          <p class="col-md-8 fs-4">Welcome to Swinny Tours, where every journey is an adventure waiting to unfold!
+          <p class="col-md-8 fs-4 jumbotron">Welcome to Swinny Tours, where every journey is an adventure waiting to unfold!
             <br>
             At Swinny Tours, we believe that travel is not just about reaching a destination;
             <br>
@@ -119,23 +119,19 @@ const searchFlight = async () => {
             <div class="row">
               <div class="col">
                 <h3>Talented Crew</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                  et dolore magna aliqua.</p>
+                <p>We have crews who possess exceptional skills, expertise, and synergy. Ensuring you'll have the best flight experience .</p>
               </div>
               <div class="col">
                 <h3>Safe Guard</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                  et dolore magna aliqua.</p>
+                <p>Rigorous safety protocols, advanced technology employment, and proficient pilot expertise, ensuring the secure transportation of passengers and cargo through the skies.</p>
               </div>
               <div class="col">
                 <h3>Best Awards</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                  et dolore magna aliqua.</p>
+                <p>Exceptional achievement, innovation, or superiority proving our experience in this field.</p>
               </div>
               <div class="col">
                 <h3>Pickup at Home</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                  et dolore magna aliqua.</p>
+                <p>Personal Pickup from Home to airport. Ensuring convenience and comfort for everyone.</p>
               </div>
             </div>
           </div>
@@ -150,8 +146,7 @@ const searchFlight = async () => {
             <div class="card" style="width: 18rem;">
               <div class="card-body">
                 <h5 class="card-title">Airport Pickup</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
+                <p class="card-text">Personal Pickup from Home to airport. Ensuring convenience and comfort for everyone.</p>
               </div>
             </div>
           </div>
@@ -159,8 +154,7 @@ const searchFlight = async () => {
             <div class="card" style="width: 18rem;">
               <div class="card-body">
                 <h5 class="card-title">Airport Lounge</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
+                <p class="card-text">Free airport lounge acces for resting and waiting for boarding time.</p>
               </div>
             </div>
           </div>
@@ -168,16 +162,14 @@ const searchFlight = async () => {
             <div class="card" style="width: 18rem;">
               <div class="card-body">
                 <h5 class="card-title">Sim Card upon Arrival</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
+                <p class="card-text">Free sim card upon arrival in your destination.</p>
               </div>
             </div>
           </div>
           <div class="card" style="width: 18rem;">
             <div class="card-body">
               <h5 class="card-title">Extra Baggage</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
+              <p class="card-text">Free extra 10kg baggage ensuring you can bring all your favorite stuff with you throughout your journey.</p>
             </div>
           </div>
         </div>
@@ -188,9 +180,13 @@ const searchFlight = async () => {
 
 <style scoped>
 .bgJumbotron {
-  background-image: url('./assets/jumbotronbg.jpg');
+  background-image: url('/src/assets/jumbotronbg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   filter: grayscale(70%);
+}
+
+.jumbotron {
+  color: darkblue;
 }
 </style>

@@ -57,7 +57,7 @@ provide('login', login)
   <div class="d-flex flex-column gap-3">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <img src="" alt="logo" width="42" height="42">
+        <img src="/src/assets/logo.png" alt="logo" width="42" height="42">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
